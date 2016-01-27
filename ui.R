@@ -14,16 +14,14 @@ shinyUI(fluidPage(
     sidebarPanel(
     	numericInput("number", label = "Two-digit number:", value = 00, 
     		     min = 00, max = 99, step = 1, width = NULL),
-    	HTML("0 = s OR z<br />
-    	     1 = t OR d<br />
-    	     2 = n<br />
-    	     3 = m<br />
-    	     4 = r<br />
-    	     5 = l<br />
-    	     6 = j OR g<br />
-    	     7 = k OR c<br />
-    	     8 = f OR v<br />
-    	     9 = b OR p")
+    
+    	htmlOutput("code"),
+    	
+    	selectInput("system", label = h3("System"), 
+    		    choices = list("Benjamins" = "benj", "Classic" = "clas"), 
+    		    selected = 1)
+    	
+    	
     ),
 
     # Show a plot of the generated distribution
